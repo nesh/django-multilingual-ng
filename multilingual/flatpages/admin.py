@@ -18,8 +18,8 @@ class MultilingualFlatpageForm(MultilingualModelAdminForm):
 
 class MultilingualFlatPageAdmin(MultilingualModelAdmin):
     form = MultilingualFlatpageForm
-    fieldsets = (
-        (None, {'fields': ('url', 'sites')}),
+    use_fieldsets = (
+        (None, {'fields': ('url', 'title', 'content', 'sites')}),
         (_('Advanced options'), {'classes': ('collapse',), 'fields': ('enable_comments', 'registration_required', 'template_name')}),
     )
     list_display = ('url', 'title')
