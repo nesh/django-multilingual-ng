@@ -140,7 +140,7 @@ def get_translation(cls, language_code, create_if_necessary=False,
         language_code = getattr(cls, '_default_language', None)
     if language_code is None:
         language_code = get_default_language()
-        
+
     force_language = cls._meta.force_language
     if force_language is not None:
         language_code = force_language
@@ -287,11 +287,11 @@ class Translation:
         trans_attrs['language_code'] = models.CharField(max_length=15, blank=True,
                                                         choices=get_language_choices(),
                                                         db_index=True)
-        
+
         edit_inline = True
 
         trans_attrs['master'] = TranslationForeignKey(main_cls, blank=False, null=False,
-                                                      related_name='translations',)
+                                                      related_name="%s_translations" % translation_model_name,)
         trans_attrs['__str__'] = lambda self: ("%s object, language_code=%s"
                                                % (translation_model_name,
                                                   self.language_code))
