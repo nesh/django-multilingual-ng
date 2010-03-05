@@ -3,3 +3,8 @@
 .pydevproject
 dist
 django_multilingual_ng.egg-info
+
+# ignore Komodo project files
+*.kpf
+# env is the dir where virtualenv is installed
+env/

@@ -1,0 +1,9 @@
+# generic python
+
+# ----------------------
+# django stuff
+# ----------------------
+
+#Django>=1.2
+-f http://www.djangoproject.com/download/1.2-beta-1/tarball/#egg=Django-1.2-beta-1
+Django>=Django-1.2-beta-1

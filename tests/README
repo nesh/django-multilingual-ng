@@ -1,0 +1,5 @@
+Requirements
+
+You'll need virtualenv installed for this tests to work.
+
+Run tests after enabling your virtual environment.
