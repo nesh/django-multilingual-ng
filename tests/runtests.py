@@ -6,7 +6,6 @@ import unittest
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, ROOT) # put multilingual in path
 
-import django
 import django.contrib as contrib
 
 try:
@@ -15,7 +14,6 @@ except NameError:
     from sets import Set as set     # For Python 2.3
 
 
-CONTRIB_DIR_NAME = 'django.contrib'
 MODEL_TESTS_DIR_NAME = 'modeltests'
 REGRESSION_TESTS_DIR_NAME = 'regressiontests'
 
@@ -40,7 +38,7 @@ ALWAYS_INSTALLED_APPS = [
 
 def get_test_models():
     models = []
-    for loc, dirpath in (MODEL_TESTS_DIR_NAME, MODEL_TEST_DIR), (REGRESSION_TESTS_DIR_NAME, REGRESSION_TEST_DIR), (CONTRIB_DIR_NAME, CONTRIB_DIR):
+    for loc, dirpath in (MODEL_TESTS_DIR_NAME, MODEL_TEST_DIR), (REGRESSION_TESTS_DIR_NAME, REGRESSION_TEST_DIR):
         for f in os.listdir(dirpath):
             if f.startswith('__init__') or f.startswith('.') or f.startswith('sql') or f.startswith('invalid'):
                 continue
@@ -49,7 +47,7 @@ def get_test_models():
 
 def get_invalid_models():
     models = []
-    for loc, dirpath in (MODEL_TESTS_DIR_NAME, MODEL_TEST_DIR), (REGRESSION_TESTS_DIR_NAME, REGRESSION_TEST_DIR), (CONTRIB_DIR_NAME, CONTRIB_DIR):
+    for loc, dirpath in (MODEL_TESTS_DIR_NAME, MODEL_TEST_DIR), (REGRESSION_TESTS_DIR_NAME, REGRESSION_TEST_DIR):
         for f in os.listdir(dirpath):
             if f.startswith('__init__') or f.startswith('.') or f.startswith('sql'):
                 continue
