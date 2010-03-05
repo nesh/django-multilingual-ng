@@ -4,7 +4,7 @@ from django.db import models
 
 import multilingual
 
-class SimpleModel(models.Model):
+class SimpleModel2(models.Model):
     # i18n fields
     class Translation(multilingual.Translation):
         bar = models.CharField(max_length=50)
@@ -13,7 +13,7 @@ class SimpleModel(models.Model):
         return self.bar
 
 
-class SimpleModel2(models.Model):
+class SimpleModel(models.Model):
     foo = models.CharField(max_length=10)
 
     # i18n fields
